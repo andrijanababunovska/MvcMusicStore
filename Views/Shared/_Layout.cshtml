@@ -25,6 +25,18 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
+
+                @using (Html.BeginForm("Search", "Home", FormMethod.Get, new { @clas = "navbar-right" }))
+                {
+                    <ul class="nav navbar-nav" >
+                        <li>
+                            <input style="margin:10px" class="form-control" type="search" name="q" placeholder="Search" aria-label="Search">
+                        </li>
+                        <li>
+                            <button style="margin:10px" class="btn btn-outline-success" type="submit">Search</button>
+                        </li>
+                    </ul>
+                }
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
